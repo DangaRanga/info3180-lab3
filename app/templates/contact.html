@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block main %}
+<h2>Fill out this form to contact the site owners</h1>
+<hr>
+<form method="POST">
+  {{ form.csrf_token }}
+  <div>{{ form.name.label }} {{ form.name(required='required') }}</div>
+  <div>{{form.email.label }} {{ form.email(required='required') }}</div>
+  <div>{{ form.subject.label }} {{form.subject(required='required')}}</div>
+  <div>{{ form.message_body.label }} {{ form.message_body(required='required') }}</div>
+  <button type='submit' id='submit'> Send </button>
+</form>
+{% endblock %}
